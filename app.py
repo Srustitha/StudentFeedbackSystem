@@ -17,5 +17,5 @@ for i in range(start_teacher, end_teacher + 1):
         st.text(generate_summary(teacher_feedback))
 
     else:
-        st.text(f"No feedback available for {teacher}.")
+        st.text("No feedback available for"+teacher)
 
