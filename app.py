@@ -10,11 +10,10 @@ start_teacher = 1
 end_teacher = 5  # Adjust as needed
 # Generate summary for each teacher in the specified range
 for i in range(start_teacher, end_teacher + 1):
-    #teacher = f'Teacher {i}'
-    teacher=st.text(Teacher{i})
+    teacher = f'Teacher {i}'
     if teacher in df.columns and not df[teacher].isnull().all():
         teacher_feedback = df[teacher].dropna().str.cat(sep=' ')
-        st.text("Summary of feedback for {teacher}:")
+        st.text("Summary of feedback for :",teacher)
         st.text(generate_summary(teacher_feedback))
 
     else:
