@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-st.header('RAMACHNADRA COLLEGE OF ENGINEERING')
+st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 csv=st.file_uploader('Enter CSV')
 # Load the dataset
