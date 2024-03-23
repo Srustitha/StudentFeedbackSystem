@@ -4,7 +4,7 @@ st.header('RAMACHNADRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 csv=st.file_uploader('Enter CSV')
 # Load the dataset
-df = pd.read_csv(csv')
+df = pd.read_csv(csv)
 # Specify the range of teachers to consider
 start_teacher = 1
 end_teacher = 5  # Adjust as needed
