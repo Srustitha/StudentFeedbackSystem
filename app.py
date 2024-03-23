@@ -1,10 +1,15 @@
 import streamlit as st
 import pandas as pd
 from nltk.tokenize import sent_tokenize
+from sentence_transformers import SentenceTransformer
+from sklearn.metrics.pairwise import cosine_similarity
+
 
 st.header('RAMACHANDRA COLLEGE OF ENGINEERING')
 st.title('STUDENT FEEDBACK ANALYZER')
 csv=st.file_uploader('Enter CSV')
+model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+
 # Load the dataset
 df = pd.read_csv(csv)
 def generate_summary(teacher_feedback):
@@ -38,7 +43,7 @@ start_teacher = 1
 end_teacher = 5  # Adjust as needed
 # Generate summary for each teacher in the specified range
 for i in range(start_teacher, end_teacher + 1):
-    teacher = f'Teacher {i}'
+    teacher = st.text('Teacher '+str(i))
     if teacher in df.columns and not df[teacher].isnull().all():
         teacher_feedback = df[teacher].dropna().str.cat(sep=' ')
         st.text("Summary of feedback for :"+teacher)
