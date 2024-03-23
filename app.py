@@ -13,7 +13,7 @@ for i in range(start_teacher, end_teacher + 1):
     teacher = f'Teacher {i}'
     if teacher in df.columns and not df[teacher].isnull().all():
         teacher_feedback = df[teacher].dropna().str.cat(sep=' ')
-        st.text("Summary of feedback for :"+teacher)
+        st.text("Summary of feedback for :", teacher)
         st.text(generate_summary(teacher_feedback))
 
     else:
